@@ -19,15 +19,15 @@ if __name__ == '__main__':
     instruments = ["000300.SH", "000905.SH"]
 
     # 加载相关数据(使用Wind)
-    feed = WindHisFeed.Feed()
-    for i in instruments:
-      feed.addBarsFromWind(i, ['CLOSE', 'HIGH', 'LOW', 'OPEN'], '2017-01-01', '2017-08-01')
+    # feed = WindHisFeed.Feed()
+    # for i in instruments:
+      # feed.addBarsFromWind(i, ['CLOSE', 'HIGH', 'LOW', 'OPEN'], '2017-01-01', '2017-08-01')
 
 
     # 加载相关数据(使用CSV文件)
-    # feed = WindCSVFeed.Feed()
-    # feed.addBarsFromCSV("000300.SH", "data/000300.SH.CSV")
-    # feed.addBarsFromCSV("000905.SH", "data/000905.SH.CSV")
+    feed = WindCSVFeed.Feed()
+    feed.addBarsFromCSV("000300.SH", "data/000300.SH.CSV")
+    feed.addBarsFromCSV("000905.SH", "data/000905.SH.CSV")
     # feed.addBarsFromCSV("H11008.CSI", "data/H11008.CSI.CSV")
     # feed.addBarsFromCSV("gold", "data/gold.csv")
     # feed.addBarsFromCSV("wti", "data/wti.csv")
